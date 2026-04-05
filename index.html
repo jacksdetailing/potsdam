@@ -889,39 +889,130 @@
   <p class="section-label">Our Work</p>
   <h2 class="section-title">Gallery</h2>
 
-  <div class="gallery-grid">
-    <div class="gallery-cell">
-      <div class="gallery-cell-inner">
-        <div class="icon">📷</div>
-        <p>Photo coming soon</p>
+  <!-- Before / After -->
+  <p class="gallery-sub-label">Before & After</p>
+  <div class="gallery-ba-grid">
+    <div class="gallery-ba-pair">
+      <div class="gallery-ba-img">
+        <img src="img8.jpg" alt="RAV4 floor before detail">
+        <span class="ba-tag">Before</span>
+      </div>
+      <div class="gallery-ba-img">
+        <img src="img7.jpg" alt="RAV4 interior after detail">
+        <span class="ba-tag ba-tag--after">After</span>
       </div>
     </div>
-    <div class="gallery-cell">
-      <div class="gallery-cell-inner">
-        <div class="icon">📷</div>
-        <p>Photo coming soon</p>
+    <div class="gallery-ba-pair">
+      <div class="gallery-ba-img">
+        <img src="img1.jpg" alt="Center console before detail">
+        <span class="ba-tag">Before</span>
       </div>
-    </div>
-    <div class="gallery-cell">
-      <div class="gallery-cell-inner">
-        <div class="icon">📷</div>
-        <p>Photo coming soon</p>
-      </div>
-    </div>
-    <div class="gallery-cell">
-      <div class="gallery-cell-inner">
-        <div class="icon">📷</div>
-        <p>Photo coming soon</p>
-      </div>
-    </div>
-    <div class="gallery-cell">
-      <div class="gallery-cell-inner">
-        <div class="icon">📷</div>
-        <p>Photo coming soon</p>
+      <div class="gallery-ba-img">
+        <img src="img2.jpg" alt="Center console after detail">
+        <span class="ba-tag ba-tag--after">After</span>
       </div>
     </div>
   </div>
+
+  <!-- Action shots -->
+  <p class="gallery-sub-label" style="margin-top:2rem">In Action</p>
+  <div class="gallery-action-grid">
+    <div class="gallery-cell"><img src="img3.jpg" alt="Tesla being washed"></div>
+    <div class="gallery-cell"><img src="img5.jpg" alt="Tesla bumper before wash"></div>
+    <div class="gallery-cell"><img src="img4.jpg" alt="Jack drying Teslas"></div>
+    <div class="gallery-cell"><img src="img6.jpg" alt="Jack between two Teslas"></div>
+  </div>
 </section>
+
+<style>
+  .gallery-sub-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 0.75rem;
+  }
+
+  /* Before/After grid */
+  .gallery-ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 0;
+  }
+
+  .gallery-ba-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+
+  .gallery-ba-img {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+  }
+
+  .gallery-ba-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-ba-img:hover img { transform: scale(1.04); }
+
+  .ba-tag {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(15,11,8,0.75);
+    color: var(--light);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+  }
+
+  .ba-tag--after {
+    background: rgba(200,169,122,0.9);
+    color: var(--brown);
+  }
+
+  /* Action grid */
+  .gallery-action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .gallery-action-grid .gallery-cell {
+    height: 180px;
+    overflow: hidden;
+    background: var(--light);
+  }
+
+  .gallery-action-grid .gallery-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-action-grid .gallery-cell:hover img { transform: scale(1.04); }
+
+  @media (max-width: 768px) {
+    .gallery-ba-grid { grid-template-columns: 1fr; }
+    .gallery-ba-img { height: 150px; }
+    .gallery-action-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-action-grid .gallery-cell { height: 140px; }
+  }
+</style>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
